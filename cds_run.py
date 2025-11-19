@@ -30,11 +30,11 @@ def run_task_tele():
             ip_offline.append(ip)
     if len(ip_offline) > 0:
         asyncio.run(send_tele("离线ip".join(ip_offline)))
-    else:
-        asyncio.run(send_tele("无离线ip"))
+
 
 if __name__ == "__main__":
-    schedule.every(3).minutes.do(run_task_tele)
+    run_task_tele()
+    schedule.every(5).minutes.do(run_task_tele)
     while True:
         schedule.run_pending()
         time.sleep(1)

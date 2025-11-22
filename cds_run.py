@@ -6,7 +6,7 @@ import schedule
 import time
 BOT_TOKEN = "5802231356:AAGomB_cjbTKCNX4kDbnUykgRC2lGaI2GKk"
 CHAT_ID = "750326239"
-
+CHAT_ID_ZHANG_PENG='8569953357'
 bot = Bot(token=BOT_TOKEN)
 def sort_ips_from_txt(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -20,6 +20,7 @@ def sort_ips_from_txt(filepath):
 async def send_tele(message):
     bot = Bot(BOT_TOKEN)
     await bot.send_message(chat_id=CHAT_ID, text=message)
+    await bot.send_message(chat_id=CHAT_ID_ZHANG_PENG, text=message)
 
 def run_task_tele():
     ips = utils.utils_k.txt_2_list('ips.txt')
@@ -33,6 +34,7 @@ def run_task_tele():
 
 
 if __name__ == "__main__":
+    asyncio.run(send_tele("启动BOT"))
     run_task_tele()
     schedule.every(5).minutes.do(run_task_tele)
     while True:

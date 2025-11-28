@@ -8,7 +8,8 @@ from telegram.ext import (
     ContextTypes,
     filters
 )
-
+import utils.utils_k
+from utils.utils_k import ping_ip
 # 1. 配置日志记录 (可选，但推荐)
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
@@ -82,4 +83,10 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+  #  main()
+    ips = utils.utils_k.txt_2_list('ips.txt')
+    ip_offline = []
+    for ip in ips:
+        if not ping_ip(ip):
+            print(ip)
+            ip_offline.append(ip)

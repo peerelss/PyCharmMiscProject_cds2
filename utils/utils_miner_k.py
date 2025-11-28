@@ -57,7 +57,7 @@ def get_all_cgminer_info(ip):
     return result
 
 if __name__ == "__main__":
-    ip = "10.2.1.74"   # 修改你的矿机 IP
+    ip = "10.4.11.247"   # 修改你的矿机 IP
     info = get_all_cgminer_info(ip)
 
     print(json.dumps(info, indent=4, ensure_ascii=False))

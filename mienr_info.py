@@ -1,6 +1,7 @@
 import socket
 import json
 
+
 def cgminer_summary(ip, timeout=1.0):
     try:
         s = socket.socket()
@@ -13,9 +14,6 @@ def cgminer_summary(ip, timeout=1.0):
         raw = s.recv(4096)
         s.close()
 
-        # -------------------------
-        # 关键：清理脏数据
-        # -------------------------
 
         text = raw.decode("utf-8", errors="ignore")
 
@@ -37,10 +35,15 @@ def cgminer_summary(ip, timeout=1.0):
         print("原始返回：", raw)
         return None
 # ------------------ 测试 ------------------
-if __name__ == "__main__":
-    ip = "10.1.1.1"   # 替换为你的矿机 IP
-    info = cgminer_summary(ip)
 
-    if info:
-        print("\n=== SUMMARY 信息 ===")
-        print(json.dumps(info, indent=4))
+def get_miner_hash_rate_by_ip(ip):
+    miner_info=cgminer_summary(ip)
+    print(miner_info)
+    if miner_info is None:
+        return None
+    else:
+        return miner_info["SUMMARY"][0]["MHS av"]
+
+
+if __name__ == "__main__":
+   print("")

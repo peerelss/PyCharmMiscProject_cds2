@@ -1,4 +1,5 @@
 import utils.utils_k
+from utils.get_hour_power_price import get_ercot_hb_west_prices
 from utils.utils_k import ping_ip
 from telegram import Bot
 import asyncio
@@ -22,6 +23,25 @@ async def send_tele(message):
     await bot.send_message(chat_id=CHAT_ID, text=message)
     await bot.send_message(chat_id=CHAT_ID_ZHANG_PENG, text=message)
 
+def get_higher_70_power_price():
+    date_string_tomorrow = utils.utils_k.date_to_string_tomorrow()
+    url = "https://www.ercot.com/content/cdr/html/DATE_STRING_dam_spp.html".replace("DATE_STRING", date_string_tomorrow)
+    date_price_d = get_ercot_hb_west_prices(url)
+
+    high_price_messages = []
+
+    if date_price_d:
+        print(f"--- ERCOT HB_WEST 20251205 每小时电价 ---")
+        for hour, price in date_price_d.items():
+            if price>70:
+                print(f"小时 {hour:02d}: ${price:.2f}")
+                message = f"小时 {hour:02d}: ${price:.2f}"
+                high_price_messages.append(message)
+        output_string = "\n".join(high_price_messages)
+        asyncio.run(send_tele("离线ip".join(output_string)))
+    else:
+        print("未能成功获取电价数据。")
+
 def run_task_tele():
     ips = utils.utils_k.txt_2_list('ips.txt')
     ip_offline = []
@@ -36,6 +56,7 @@ def run_task_tele():
 if __name__ == "__main__":
     asyncio.run(send_tele("启动BOT"))
     run_task_tele()
+    schedule.every().day.at("14:00").do(get_higher_70_power_price)
     schedule.every(5).minutes.do(run_task_tele)
     while True:
         schedule.run_pending()

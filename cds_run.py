@@ -5,10 +5,13 @@ from telegram import Bot
 import asyncio
 import schedule
 import time
+
 BOT_TOKEN = "5802231356:AAGomB_cjbTKCNX4kDbnUykgRC2lGaI2GKk"
 CHAT_ID = "750326239"
-CHAT_ID_ZHANG_PENG='8569953357'
+CHAT_ID_ZHANG_PENG = '8569953357'
 bot = Bot(token=BOT_TOKEN)
+
+
 def sort_ips_from_txt(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         ips = [line.strip() for line in f if line.strip()]
@@ -18,10 +21,12 @@ def sort_ips_from_txt(filepath):
 
     return ips
 
+
 async def send_tele(message):
     bot = Bot(BOT_TOKEN)
     await bot.send_message(chat_id=CHAT_ID, text=message)
     await bot.send_message(chat_id=CHAT_ID_ZHANG_PENG, text=message)
+
 
 def get_higher_70_power_price():
     date_string_tomorrow = utils.utils_k.date_to_string_tomorrow()
@@ -33,14 +38,18 @@ def get_higher_70_power_price():
     if date_price_d:
         print(f"--- ERCOT HB_WEST 20251205 每小时电价 ---")
         for hour, price in date_price_d.items():
-            if price>70:
+            if price > 70:
                 print(f"小时 {hour:02d}: ${price:.2f}")
                 message = f"小时 {hour:02d}: ${price:.2f}"
                 high_price_messages.append(message)
-        output_string = "\n".join(high_price_messages)
-        asyncio.run(send_tele("离线ip".join(output_string)))
+        if len(high_price_messages) > 0:
+            output_string = "\n".join(high_price_messages)
+            asyncio.run(send_tele("休眠时间".join(output_string)))
+        else:
+            asyncio.run(send_tele(" 无休眠时间"))
     else:
         print("未能成功获取电价数据。")
+
 
 def run_task_tele():
     ips = utils.utils_k.txt_2_list('ips.txt')
@@ -56,7 +65,7 @@ def run_task_tele():
 if __name__ == "__main__":
     asyncio.run(send_tele("启动BOT"))
     run_task_tele()
-    schedule.every().day.at("14:00").do(get_higher_70_power_price)
+    schedule.every().day.at("14:10").do(get_higher_70_power_price)
     schedule.every(5).minutes.do(run_task_tele)
     while True:
         schedule.run_pending()

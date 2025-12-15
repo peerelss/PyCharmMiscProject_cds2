@@ -1,3 +1,5 @@
+from threading import active_count
+
 import requests
 import json
 import time
@@ -42,8 +44,6 @@ def fetch_luxor_pool_data():
 
     # The date range for 'getHashrateAndEfficiencyHistory' needs to be calculated
     # based on the current time to ensure the request is valid.
-    # The original curl request had specific, potentially old timestamps.
-    # We will adjust it to cover the last 15 hours from now.
     date_range_end = current_timestamp_s
     date_range_start = current_timestamp_s - (15 * 3600)  # 15 hours ago
 
@@ -51,6 +51,7 @@ def fetch_luxor_pool_data():
         "0": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1, "lastSeconds": 300}},
         "1": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1, "lastSeconds": 86400}},
         "2": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1, "lastSeconds": 300}},
+        # Target function
         "3": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1, "lastSeconds": 300}},
         "4": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1, "lastSeconds": 86400}},
         "5": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1}},
@@ -87,22 +88,34 @@ def fetch_luxor_pool_data():
             url,
             headers=headers,
             cookies=cookies,
-            data=json.dumps(data_payload)  # The data must be sent as a JSON string
+            data=json.dumps(data_payload)
         )
-        response.raise_for_status()  # Raise an exception for bad status codes (4xx or 5xx)
+        response.raise_for_status()
 
-        # The tRPC API returns JSON Lines (jsonl) when using 'trpc-accept: application/jsonl'
-        # The response is a series of JSON objects separated by newlines.
         data_lines = response.text.strip().split('\n')
-
-        print("✅ Request successful. Parsed data:")
-
-        # Parse each line as a separate JSON object
         parsed_results = [json.loads(line) for line in data_lines]
 
-        # The results are in the order of the functions in the URL/payload
-        # You can now process the data for each call (e.g., hashrate, efficiency, workers)
-        # For demonstration, we'll print a summary of the first few results
+        print("✅ Request successful. Data summary:")
+
+        # --- Active Miners Extraction ---
+        # The result for 'pool.watcher.getActiveMiners' is at index 2
+        active_miners_result = parsed_results[2]
+
+        # Structure path: [2] -> 'result' -> 'data' -> 'json' -> [2] -> [0] -> [0] -> 'activeMiners'
+        try:
+            active_miners_count = (
+                active_miners_result
+                .get('result', {})
+                .get('data', {})
+                .get('json', [])[2][0][0]
+                .get('activeMiners')
+            )
+            print(f"\n--- 💰 ACTIVE MINERS ---")
+            print(f"Active Miners: {active_miners_count}")
+        except (IndexError, TypeError, KeyError) as e:
+            print(f"\n❌ Error extracting Active Miners data: {e}")
+            active_miners_count = "N/A"
+        # -------------------------------
 
         # 0: pool.watcher.getHashrate (300s)
         print(f"\n--- 300s Hashrate ---")
@@ -120,7 +133,6 @@ def fetch_luxor_pool_data():
         worker_count = len(workers_data.get('workers', []))
         total_workers = workers_data.get('totalCount')
         print(f"Found {worker_count} of {total_workers} total workers in the list.")
-        # print(workers_data.get('workers', [])[0] if worker_count > 0 else "No workers data to show.")
 
         return parsed_results
 
@@ -129,8 +141,27 @@ def fetch_luxor_pool_data():
         print(f"Response content: {getattr(e.response, 'text', 'N/A')}")
         return None
 
+def get_active_miner_and_hashrate():
+    data = fetch_luxor_pool_data()
+    active_count = 0
+    active_hashrate = 0
+    for d in data:
+        dd = list(d['json'])
+        for d3 in dd[2]:
+            for d4 in d3:
+                if type(d4) is dict:
+                    if 'activeMiners' in d4:
+                        d4c = int(d4['activeMiners'])
+                        if d4c > active_count:
+                            active_count = d4c
+                    if 'hashrateLastPeriod' in d4:
+                        d4h = float(d4['hashrateLastPeriod'])/1000/1000/1000/1000/1000
+                        if d4h > active_hashrate:
+                            active_hashrate = d4h
+    return active_count, active_hashrate
 
 if __name__ == "__main__":
     # 1. 调用函数获取结果列表
-    data = fetch_luxor_pool_data()
-    print(data)
+    ac,ah=get_active_miner_and_hashrate()
+    print(ac)
+    print(ah)

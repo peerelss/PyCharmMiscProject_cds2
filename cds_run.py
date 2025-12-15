@@ -1,3 +1,4 @@
+import ob_monitor
 import utils.utils_k
 from utils.get_hour_power_price import get_ercot_hb_west_prices
 from utils.utils_k import ping_ip
@@ -5,6 +6,9 @@ from telegram import Bot
 import asyncio
 import schedule
 import time
+
+HASH_RATE=200 # 默认算力
+ONLINE_MINER=1004 #默认在线机器
 
 BOT_TOKEN = "5802231356:AAGomB_cjbTKCNX4kDbnUykgRC2lGaI2GKk"
 CHAT_ID = "750326239"
@@ -64,7 +68,11 @@ def run_task_tele():
             asyncio.run(send_tele(message_str))
         else:
             asyncio.run(send_tele("离线ip过多"))
-
+    ac,ah=  ob_monitor.et_active_hour_power_price()
+    if ac/ONLINE_MINER <0.5:
+        asyncio.run(send_tele("离线ip过多"))
+    if ah/HASH_RATE<0.5 :
+        asyncio.run(send_tele("算力下降太多"))
 
 if __name__ == "__main__":
     asyncio.run(send_tele("启动BOT"))

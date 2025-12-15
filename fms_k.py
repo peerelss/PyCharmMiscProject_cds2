@@ -15,7 +15,6 @@ PORT = 4028
 DEFAULT_PORT = 4028
 # 要发送的命令
 # 示例：停止 ASIC
-COMMAND = "ascset|0,softoff"
 COMMAND_SLEEP = "ascset|0,softoff"
 COMMAND_WAKE = "ascset|0,reboot,1"
 

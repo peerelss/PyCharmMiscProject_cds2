@@ -1,0 +1,1697 @@
+[{
+	'json': {
+		'0': [
+			[0],
+			[None, 0, 0]
+		],
+		'1': [
+			[0],
+			[None, 0, 1]
+		],
+		'2': [
+			[0],
+			[None, 0, 2]
+		],
+		'3': [
+			[0],
+			[None, 0, 3]
+		],
+		'4': [
+			[0],
+			[None, 0, 4]
+		],
+		'5': [
+			[0],
+			[None, 0, 5]
+		],
+		'6': [
+			[0],
+			[None, 0, 6]
+		],
+		'7': [
+			[0],
+			[None, 0, 7]
+		],
+		'8': [
+			[0],
+			[None, 0, 8]
+		],
+		'9': [
+			[0],
+			[None, 0, 9]
+		]
+	}
+}, {
+	'json': [9, 0, [
+		[{
+			'result': 0
+		}],
+		['result', 0, 10]
+	]]
+}, {
+	'json': [10, 0, [
+		[{
+			'data': 0
+		}],
+		['data', 0, 11]
+	]]
+}, {
+	'json': [11, 0, [
+		[{
+			'$typeName': 'superapp.workspace.v1.IncrementWatcherLinkViewCountResponse',
+			'watcherLinkCode': 'watcher-cfabb00ab508bff0db810c5f1c92a003'
+		}]
+	]]
+}, {
+	'json': [6, 0, [
+		[{
+			'result': 0
+		}],
+		['result', 0, 12]
+	]]
+}, {
+	'json': [12, 0, [
+		[{
+			'data': 0
+		}],
+		['data', 0, 13]
+	]]
+}, {
+	'json': [13, 0, [
+		[
+			[{
+				'$typeName': 'superapp.pool.v1.GetRevenueResponse',
+				'revenue': 0.0542032,
+				'currencyProfile': 1
+			}]
+		]
+	]]
+}, {
+	'json': [3, 0, [
+		[{
+			'result': 0
+		}],
+		['result', 0, 14]
+	]]
+}, {
+	'json': [14, 0, [
+		[{
+			'data': 0
+		}],
+		['data', 0, 15]
+	]]
+}, {
+	'json': [15, 0, [
+		[{
+			'$typeName': 'superapp.pool.v1.GetEfficiencyResponse',
+			'efficiencyLastPeriod': 0.9998995661735535,
+			'efficiencyPrevPeriod': 0.9997275471687317,
+			'lift': 0.01720789261162281
+		}]
+	]]
+}, {
+	'json': [5, 0, [
+		[{
+			'result': 0
+		}],
+		['result', 0, 16]
+	]]
+}, {
+	'json': [16, 0, [
+		[{
+			'data': 0
+		}],
+		['data', 0, 17]
+	]]
+}, {
+	'json': [17, 0, [
+		[
+			[{
+				'$typeName': 'superapp.pool.v1.GetPendingBalanceResponse',
+				'pendingBalance': 0.025723322805557187,
+				'currencyProfile': 1
+			}]
+		]
+	]]
+}, {
+	'json': [2, 0, [
+		[{
+			'result': 0
+		}],
+		['result', 0, 18]
+	]]
+}, {
+	'json': [18, 0, [
+		[{
+			'data': 0
+		}],
+		['data', 0, 19]
+	]]
+}, {
+	'json': [19, 0, [
+		[{
+			'$typeName': 'superapp.pool.v1.GetActiveMinersResponse',
+			'activeMiners': 942
+		}]
+	]]
+}, {
+	'json': [0, 0, [
+		[{
+			'result': 0
+		}],
+		['result', 0, 20]
+	]]
+}, {
+	'json': [20, 0, [
+		[{
+			'data': 0
+		}],
+		['data', 0, 21]
+	]]
+}, {
+	'json': [21, 0, [
+		[{
+			'$typeName': 'superapp.pool.v1.GetHashrateResponse',
+			'hashrateLastPeriod': '197817095195040160',
+			'hashratePrevPeriod': '198660347312769152',
+			'lift': -0.4244692623615265
+		}]
+	]]
+}, {
+	'json': [8, 0, [
+		[{
+			'result': 0
+		}],
+		['result', 0, 22]
+	]]
+}, {
+	'json': [22, 0, [
+		[{
+			'data': 0
+		}],
+		['data', 0, 23]
+	]]
+}, {
+	'json': [23, 0, [
+		[{
+			'$typeName': 'superapp.pool.v1.GetWorkersResponse',
+			'workers': [{
+				'$typeName': 'superapp.pool.v1.WorkerData',
+				'id': 'BTC-canaanchildress01-10x10x11x203',
+				'username': 'canaanchildress01',
+				'name': '10x10x11x203',
+				'firmwareOs': 'CGMiner',
+				'hashrate': 194019309125632,
+				'efficiency': 1,
+				'staleShares': 0,
+				'rejectedShares': 0,
+				'lastShareTime': {
+					'$typeName': 'google.protobuf.Timestamp',
+					'seconds': '1765812060',
+					'nanos': 0
+				},
+				'status': True
+			}, {
+				'$typeName': 'superapp.pool.v1.WorkerData',
+				'id': 'BTC-canaanchildress01-10x10x11x206',
+				'username': 'canaanchildress01',
+				'name': '10x10x11x206',
+				'firmwareOs': 'CGMiner',
+				'hashrate': 228996583260160,
+				'efficiency': 1,
+				'staleShares': 0,
+				'rejectedShares': 0,
+				'lastShareTime': {
+					'$typeName': 'google.protobuf.Timestamp',
+					'seconds': '1765812060',
+					'nanos': 0
+				},
+				'status': True
+			}, {
+				'$typeName': 'superapp.pool.v1.WorkerData',
+				'id': 'BTC-canaanchildress01-10x10x11x207',
+				'username': 'canaanchildress01',
+				'name': '10x10x11x207',
+				'firmwareOs': 'CGMiner',
+				'hashrate': 212639686852608,
+				'efficiency': 1,
+				'staleShares': 0,
+				'rejectedShares': 0,
+				'lastShareTime': {
+					'$typeName': 'google.protobuf.Timestamp',
+					'seconds': '1765812060',
+					'nanos': 0
+				},
+				'status': True
+			}, {
+				'$typeName': 'superapp.pool.v1.WorkerData',
+				'id': 'BTC-canaanchildress01-10x10x11x208',
+				'username': 'canaanchildress01',
+				'name': '10x10x11x208',
+				'firmwareOs': 'CGMiner',
+				'hashrate': 223544290050048,
+				'efficiency': 0.9879518151283264,
+				'staleShares': 0.012048192322254181,
+				'rejectedShares': 0,
+				'lastShareTime': {
+					'$typeName': 'google.protobuf.Timestamp',
+					'seconds': '1765812060',
+					'nanos': 0
+				},
+				'status': True
+			}, {
+				'$typeName': 'superapp.pool.v1.WorkerData',
+				'id': 'BTC-canaanchildress01-10x10x11x209',
+				'username': 'canaanchildress01',
+				'name': '10x10x11x209',
+				'firmwareOs': 'CGMiner',
+				'hashrate': 250805789655040,
+				'efficiency': 1,
+				'staleShares': 0,
+				'rejectedShares': 0,
+				'lastShareTime': {
+					'$typeName': 'google.protobuf.Timestamp',
+					'seconds': '1765812060',
+					'nanos': 0
+				},
+				'status': True
+			}, {
+				'$typeName': 'superapp.pool.v1.WorkerData',
+				'id': 'BTC-canaanchildress01-10x10x11x210',
+				'username': 'canaanchildress01',
+				'name': '10x10x11x210',
+				'firmwareOs': 'CGMiner',
+				'hashrate': 283519582470144,
+				'efficiency': 1,
+				'staleShares': 0,
+				'rejectedShares': 0,
+				'lastShareTime': {
+					'$typeName': 'google.protobuf.Timestamp',
+					'seconds': '1765812060',
+					'nanos': 0
+				},
+				'status': True
+			}, {
+				'$typeName': 'superapp.pool.v1.WorkerData',
+				'id': 'BTC-canaanchildress01-10x10x11x211',
+				'username': 'canaanchildress01',
+				'name': '10x10x11x211',
+				'firmwareOs': 'CGMiner',
+				'hashrate': 253531936260096,
+				'efficiency': 1,
+				'staleShares': 0,
+				'rejectedShares': 0,
+				'lastShareTime': {
+					'$typeName': 'google.protobuf.Timestamp',
+					'seconds': '1765812060',
+					'nanos': 0
+				},
+				'status': True
+			}, {
+				'$typeName': 'superapp.pool.v1.WorkerData',
+				'id': 'BTC-canaanchildress01-10x10x11x212',
+				'username': 'canaanchildress01',
+				'name': '10x10x11x212',
+				'firmwareOs': 'CGMiner',
+				'hashrate': 212639686852608,
+				'efficiency': 0.9750000238418579,
+				'staleShares': 0.02500000037252903,
+				'rejectedShares': 0,
+				'lastShareTime': {
+					'$typeName': 'google.protobuf.Timestamp',
+					'seconds': '1765812000',
+					'nanos': 0
+				},
+				'status': True
+			}, {
+				'$typeName': 'superapp.pool.v1.WorkerData',
+				'id': 'BTC-canaanchildress01-10x10x11x213',
+				'username': 'canaanchildress01',
+				'name': '10x10x11x213',
+				'firmwareOs': 'CGMiner',
+				'hashrate': 338042581680128,
+				'efficiency': 1,
+				'staleShares': 0,
+				'rejectedShares': 0,
+				'lastShareTime': {
+					'$typeName': 'google.protobuf.Timestamp',
+					'seconds': '1765812000',
+					'nanos': 0
+				},
+				'status': True
+			}, {
+				'$typeName': 'superapp.pool.v1.WorkerData',
+				'id': 'BTC-canaanchildress01-10x10x11x214',
+				'username': 'canaanchildress01',
+				'name': '10x10x11x214',
+				'firmwareOs': 'CGMiner',
+				'hashrate': 211958146007040,
+				'efficiency': 1,
+				'staleShares': 0,
+				'rejectedShares': 0,
+				'lastShareTime': {
+					'$typeName': 'google.protobuf.Timestamp',
+					'seconds': '1765812000',
+					'nanos': 0
+				},
+				'status': True
+			}],
+			'pagination': {
+				'$typeName': 'superapp.common.v1.PaginationResponse',
+				'totalCount': 1246,
+				'pageSize': 10,
+				'pageNumber': 1,
+				'totalPages': 95
+			},
+			'totalActives': 942,
+			'totalInactives': 304
+		}]
+	]],
+	'meta': {
+		'values': {
+			'2.0.0.workers.0.lastShareTime.seconds': ['bigint'],
+			'2.0.0.workers.1.lastShareTime.seconds': ['bigint'],
+			'2.0.0.workers.2.lastShareTime.seconds': ['bigint'],
+			'2.0.0.workers.3.lastShareTime.seconds': ['bigint'],
+			'2.0.0.workers.4.lastShareTime.seconds': ['bigint'],
+			'2.0.0.workers.5.lastShareTime.seconds': ['bigint'],
+			'2.0.0.workers.6.lastShareTime.seconds': ['bigint'],
+			'2.0.0.workers.7.lastShareTime.seconds': ['bigint'],
+			'2.0.0.workers.8.lastShareTime.seconds': ['bigint'],
+			'2.0.0.workers.9.lastShareTime.seconds': ['bigint']
+		},
+		'referentialEqualities': {
+			'2.0.0.workers.0.lastShareTime.seconds': ['2.0.0.workers.1.lastShareTime.seconds', '2.0.0.workers.2.lastShareTime.seconds', '2.0.0.workers.3.lastShareTime.seconds', '2.0.0.workers.4.lastShareTime.seconds', '2.0.0.workers.5.lastShareTime.seconds', '2.0.0.workers.6.lastShareTime.seconds'],
+			'2.0.0.workers.7.lastShareTime.seconds': ['2.0.0.workers.8.lastShareTime.seconds', '2.0.0.workers.9.lastShareTime.seconds']
+		},
+		'v': 1
+	}
+}, {
+	'json': [1, 0, [
+		[{
+			'result': 0
+		}],
+		['result', 0, 24]
+	]]
+}, {
+	'json': [24, 0, [
+		[{
+			'data': 0
+		}],
+		['data', 0, 25]
+	]]
+}, {
+	'json': [25, 0, [
+		[{
+			'$typeName': 'superapp.pool.v1.GetHashrateResponse',
+			'hashrateLastPeriod': '136785720759744368',
+			'hashratePrevPeriod': '210432215545282144',
+			'lift': -34.99772644042969
+		}]
+	]]
+}, {
+	'json': [4, 0, [
+		[{
+			'result': 0
+		}],
+		['result', 0, 26]
+	]]
+}, {
+	'json': [26, 0, [
+		[{
+			'data': 0
+		}],
+		['data', 0, 27]
+	]]
+}, {
+	'json': [27, 0, [
+		[{
+			'$typeName': 'superapp.pool.v1.GetUptimeResponse',
+			'uptimeLastPeriod': 0.7435278296470642,
+			'uptimePrevPeriod': 0.9960346817970276,
+			'lift': -25.250688552856445
+		}]
+	]]
+}, {
+	'json': [7, 0, [
+		[{
+			'result': 0
+		}],
+		['result', 0, 28]
+	]]
+}, {
+	'json': [28, 0, [
+		[{
+			'data': 0
+		}],
+		['data', 0, 29]
+	]]
+}, {
+	'json': [29, 0, [
+		[
+			[{
+				'Date': '2025-12-15T01:20:00.000Z',
+				'% Efficiency': 99.93616342544556,
+				'Hashrate': '5875321013873760',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T01:30:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '32838747282909',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T01:35:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '18764998447377',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T01:40:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '22517998136852',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T01:45:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '16888498602639',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T01:55:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '19703248369745',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T02:00:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '45974246196073',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T02:10:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '26270997826327',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T02:20:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '37529996894754',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T02:25:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '50665495807918',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T02:35:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '60047995031606',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T02:40:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '26270997826327',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T02:45:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '18764998447377',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T02:50:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '58171495186868',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T03:00:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '31900497360541',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T03:05:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '33776997205278',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T03:15:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '65677494565819',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T03:25:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '48788995963180',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T03:30:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '39406496739491',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T03:40:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '41282996584229',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T03:50:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '57233245264500',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T03:55:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '38468246817122',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T04:05:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '39406496739491',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T04:10:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '7505999378950',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T04:15:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '47850746040811',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T04:20:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '53480245575024',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T04:30:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '31900497360541',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T04:35:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '24394497981590',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T04:40:00.000Z',
+				'% Efficiency': 99.83413815498352,
+				'Hashrate': '42215147882103000',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T04:45:00.000Z',
+				'% Efficiency': 99.95275139808655,
+				'Hashrate': '146875988472426208',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T04:50:00.000Z',
+				'% Efficiency': 99.72763061523438,
+				'Hashrate': '170052168929820448',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T04:55:00.000Z',
+				'% Efficiency': 99.99634027481079,
+				'Hashrate': '205103309529676064',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:00:00.000Z',
+				'% Efficiency': 99.97873306274414,
+				'Hashrate': '211708588983152800',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:05:00.000Z',
+				'% Efficiency': 99.98223781585693,
+				'Hashrate': '211253537770803904',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:10:00.000Z',
+				'% Efficiency': 99.97111558914185,
+				'Hashrate': '207841122803148384',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:15:00.000Z',
+				'% Efficiency': 99.85157251358032,
+				'Hashrate': '207661917067975936',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:20:00.000Z',
+				'% Efficiency': 99.99288320541382,
+				'Hashrate': '210861349303253728',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:25:00.000Z',
+				'% Efficiency': 99.87978339195251,
+				'Hashrate': '208916357214183104',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:30:00.000Z',
+				'% Efficiency': 99.99290704727173,
+				'Hashrate': '211707650733230432',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:35:00.000Z',
+				'% Efficiency': 99.98753070831299,
+				'Hashrate': '210703723316295776',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:40:00.000Z',
+				'% Efficiency': 99.99642968177795,
+				'Hashrate': '210213956856819232',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:45:00.000Z',
+				'% Efficiency': 99.88483786582947,
+				'Hashrate': '211585678243322496',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:50:00.000Z',
+				'% Efficiency': 99.88435506820679,
+				'Hashrate': '210702785066373408',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T05:55:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '208727768979786944',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:00:00.000Z',
+				'% Efficiency': 99.97870922088623,
+				'Hashrate': '211491853251085600',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:05:00.000Z',
+				'% Efficiency': 99.97509717941284,
+				'Hashrate': '210949544795956416',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:10:00.000Z',
+				'% Efficiency': 99.8793363571167,
+				'Hashrate': '205030126035731296',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:15:00.000Z',
+				'% Efficiency': 99.87529516220093,
+				'Hashrate': '208896653965813344',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:20:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '210703723316295776',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:25:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '209295410182820128',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:30:00.000Z',
+				'% Efficiency': 99.9047577381134,
+				'Hashrate': '208648017736385600',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:35:00.000Z',
+				'% Efficiency': 99.91180300712585,
+				'Hashrate': '208323383263245984',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:40:00.000Z',
+				'% Efficiency': 99.99955296516418,
+				'Hashrate': '209603156157357088',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:45:00.000Z',
+				'% Efficiency': 99.93118047714233,
+				'Hashrate': '209814262389890080',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:50:00.000Z',
+				'% Efficiency': 99.99642968177795,
+				'Hashrate': '210301214099599520',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T06:55:00.000Z',
+				'% Efficiency': 99.78862404823303,
+				'Hashrate': '203754106141309664',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T07:00:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '1557494871132296',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T07:10:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '42221246506598',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T07:15:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '16888498602639',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T07:25:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '15950248680270',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T07:35:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '29085747593434',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T07:40:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '28147497671065',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T07:45:00.000Z',
+				'% Efficiency': 99.87886548042297,
+				'Hashrate': '52218064866957944',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T07:50:00.000Z',
+				'% Efficiency': 99.92286562919617,
+				'Hashrate': '175018794893879968',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T07:55:00.000Z',
+				'% Efficiency': 99.99648928642273,
+				'Hashrate': '186919087784245344',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:00:00.000Z',
+				'% Efficiency': 99.54264163970947,
+				'Hashrate': '204411819336890240',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:05:00.000Z',
+				'% Efficiency': 99.99375343322754,
+				'Hashrate': '210223339356042912',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:10:00.000Z',
+				'% Efficiency': 99.89453554153442,
+				'Hashrate': '209737325896255840',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:15:00.000Z',
+				'% Efficiency': 99.98918175697327,
+				'Hashrate': '208078500033507712',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:20:00.000Z',
+				'% Efficiency': 99.99644160270691,
+				'Hashrate': '210941100546655072',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:25:00.000Z',
+				'% Efficiency': 99.98577237129211,
+				'Hashrate': '210952359545723520',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:30:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '211104356033147264',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:35:00.000Z',
+				'% Efficiency': 99.7687816619873,
+				'Hashrate': '208901345215425184',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:40:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '213830910307551136',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:45:00.000Z',
+				'% Efficiency': 99.98586177825928,
+				'Hashrate': '212356919679509696',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:50:00.000Z',
+				'% Efficiency': 99.99289512634277,
+				'Hashrate': '211208501774530208',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T08:55:00.000Z',
+				'% Efficiency': 99.99561905860901,
+				'Hashrate': '214142409281777600',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:00:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '210467284335858816',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:05:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '210276819601617920',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:10:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '213166629362514016',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:15:00.000Z',
+				'% Efficiency': 99.99644160270691,
+				'Hashrate': '210860411053331360',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:20:00.000Z',
+				'% Efficiency': 99.99955296516418,
+				'Hashrate': '209256003686080608',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:25:00.000Z',
+				'% Efficiency': 99.84278082847595,
+				'Hashrate': '211521877248601408',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:30:00.000Z',
+				'% Efficiency': 99.98536109924316,
+				'Hashrate': '211475903002405344',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:35:00.000Z',
+				'% Efficiency': 99.98593330383301,
+				'Hashrate': '213373044345435136',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:40:00.000Z',
+				'% Efficiency': 99.98916983604431,
+				'Hashrate': '207875838050276032',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:45:00.000Z',
+				'% Efficiency': 99.99288320541382,
+				'Hashrate': '210983321793161696',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:50:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '212502348417476864',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T09:55:00.000Z',
+				'% Efficiency': 99.99111294746399,
+				'Hashrate': '211167218777945984',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:00:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '210243980854335008',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:05:00.000Z',
+				'% Efficiency': 99.97583031654358,
+				'Hashrate': '209586267658754464',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:10:00.000Z',
+				'% Efficiency': 99.98884201049805,
+				'Hashrate': '210160007486283008',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:15:00.000Z',
+				'% Efficiency': 99.71469640731812,
+				'Hashrate': '207248148852211264',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:20:00.000Z',
+				'% Efficiency': 99.9911904335022,
+				'Hashrate': '213024953624236320',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:25:00.000Z',
+				'% Efficiency': 99.9929428100586,
+				'Hashrate': '212651530155133504',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:30:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '211752686729504128',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:35:00.000Z',
+				'% Efficiency': 99.8779833316803,
+				'Hashrate': '208900406965502816',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:40:00.000Z',
+				'% Efficiency': 99.9927818775177,
+				'Hashrate': '207979983791658976',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:45:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '208860062218840960',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:50:00.000Z',
+				'% Efficiency': 99.99203681945801,
+				'Hashrate': '212105468700314816',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T10:55:00.000Z',
+				'% Efficiency': 99.9787449836731,
+				'Hashrate': '211868091469955520',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:00:00.000Z',
+				'% Efficiency': 99.86120462417603,
+				'Hashrate': '210619280823282560',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:05:00.000Z',
+				'% Efficiency': 99.99281764030457,
+				'Hashrate': '208921048463794944',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:10:00.000Z',
+				'% Efficiency': 99.9911367893219,
+				'Hashrate': '211749871979737024',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:15:00.000Z',
+				'% Efficiency': 99.84897375106812,
+				'Hashrate': '210909200049294528',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:20:00.000Z',
+				'% Efficiency': 99.91825819015503,
+				'Hashrate': '211027419539513024',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:25:00.000Z',
+				'% Efficiency': 99.8318612575531,
+				'Hashrate': '209466171668691232',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:30:00.000Z',
+				'% Efficiency': 99.88899827003479,
+				'Hashrate': '209386420425289888',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:35:00.000Z',
+				'% Efficiency': 99.98557567596436,
+				'Hashrate': '208104771031334048',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:40:00.000Z',
+				'% Efficiency': 99.99279975891113,
+				'Hashrate': '208430343754396032',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:45:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '14158191328545996',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:50:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '45035996273704',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T11:55:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '93824992236885',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T12:05:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '82565993168459',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T12:10:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '57233245264500',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T12:15:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '22517998136852',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T12:20:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '64739244643450',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T12:25:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '13135498913163',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T12:30:00.000Z',
+				'% Efficiency': 85.00000238418579,
+				'Hashrate': '95701492081623',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T12:35:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '63800994721082',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T12:40:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '7505999378950',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T12:45:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '97577991926360',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T12:50:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '31900497360541',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T12:55:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '40344746661860',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:00:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '30023997515803',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:05:00.000Z',
+				'% Efficiency': 91.17646813392639,
+				'Hashrate': '58171495186868',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:10:00.000Z',
+				'% Efficiency': 97.72727489471436,
+				'Hashrate': '80689493323721',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:15:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '192341234085614',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:20:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '325572723061992',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:25:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '296486975468557',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:30:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '250512729272483',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:35:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '201723733309303',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:40:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '45035996273704',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:45:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '101330991615836',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:50:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '7505999378950',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T13:55:00.000Z',
+				'% Efficiency': 100,
+				'Hashrate': '109775240917155',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:00:00.000Z',
+				'% Efficiency': 99.66437816619873,
+				'Hashrate': '56838242047182768',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:05:00.000Z',
+				'% Efficiency': 99.2222547531128,
+				'Hashrate': '185053846938576064',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:10:00.000Z',
+				'% Efficiency': 99.97442960739136,
+				'Hashrate': '198111471108183392',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:15:00.000Z',
+				'% Efficiency': 99.8873770236969,
+				'Hashrate': '208872259467831776',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:20:00.000Z',
+				'% Efficiency': 99.96079206466675,
+				'Hashrate': '210506690832598304',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:25:00.000Z',
+				'% Efficiency': 99.86220002174377,
+				'Hashrate': '209421135672417536',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:30:00.000Z',
+				'% Efficiency': 99.88501071929932,
+				'Hashrate': '207009833371929600',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:35:00.000Z',
+				'% Efficiency': 99.99645352363586,
+				'Hashrate': '211662614736956736',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:40:00.000Z',
+				'% Efficiency': 99.9779224395752,
+				'Hashrate': '212455435921358400',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:45:00.000Z',
+				'% Efficiency': 99.8574435710907,
+				'Hashrate': '211621331740372512',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:50:00.000Z',
+				'% Efficiency': 99.84605312347412,
+				'Hashrate': '209332940179714880',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T14:55:00.000Z',
+				'% Efficiency': 99.84047412872314,
+				'Hashrate': '209632241904950528',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T15:00:00.000Z',
+				'% Efficiency': 99.95911717414856,
+				'Hashrate': '201863532547736416',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T15:05:00.000Z',
+				'% Efficiency': 99.96496438980103,
+				'Hashrate': '198092706109736000',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T15:10:00.000Z',
+				'% Efficiency': 99.9781847000122,
+				'Hashrate': '197781207135509536',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T15:15:00.000Z',
+				'% Efficiency': 99.98814463615417,
+				'Hashrate': '197818737132404288',
+				'Username': None
+			}, {
+				'Date': '2025-12-15T15:20:00.000Z',
+				'% Efficiency': 98.82792234420776,
+				'Hashrate': '37973789108034600',
+				'Username': None
+			}]
+		]
+	]],
+	'meta': {
+		'values': {
+			'2.0.0.0.Date': ['Date'],
+			'2.0.0.0.Hashrate': ['bigint'],
+			'2.0.0.0.Username': ['undefined'],
+			'2.0.0.1.Date': ['Date'],
+			'2.0.0.1.Hashrate': ['bigint'],
+			'2.0.0.1.Username': ['undefined'],
+			'2.0.0.2.Date': ['Date'],
+			'2.0.0.2.Hashrate': ['bigint'],
+			'2.0.0.2.Username': ['undefined'],
+			'2.0.0.3.Date': ['Date'],
+			'2.0.0.3.Hashrate': ['bigint'],
+			'2.0.0.3.Username': ['undefined'],
+			'2.0.0.4.Date': ['Date'],
+			'2.0.0.4.Hashrate': ['bigint'],
+			'2.0.0.4.Username': ['undefined'],
+			'2.0.0.5.Date': ['Date'],
+			'2.0.0.5.Hashrate': ['bigint'],
+			'2.0.0.5.Username': ['undefined'],
+			'2.0.0.6.Date': ['Date'],
+			'2.0.0.6.Hashrate': ['bigint'],
+			'2.0.0.6.Username': ['undefined'],
+			'2.0.0.7.Date': ['Date'],
+			'2.0.0.7.Hashrate': ['bigint'],
+			'2.0.0.7.Username': ['undefined'],
+			'2.0.0.8.Date': ['Date'],
+			'2.0.0.8.Hashrate': ['bigint'],
+			'2.0.0.8.Username': ['undefined'],
+			'2.0.0.9.Date': ['Date'],
+			'2.0.0.9.Hashrate': ['bigint'],
+			'2.0.0.9.Username': ['undefined'],
+			'2.0.0.10.Date': ['Date'],
+			'2.0.0.10.Hashrate': ['bigint'],
+			'2.0.0.10.Username': ['undefined'],
+			'2.0.0.11.Date': ['Date'],
+			'2.0.0.11.Hashrate': ['bigint'],
+			'2.0.0.11.Username': ['undefined'],
+			'2.0.0.12.Date': ['Date'],
+			'2.0.0.12.Hashrate': ['bigint'],
+			'2.0.0.12.Username': ['undefined'],
+			'2.0.0.13.Date': ['Date'],
+			'2.0.0.13.Hashrate': ['bigint'],
+			'2.0.0.13.Username': ['undefined'],
+			'2.0.0.14.Date': ['Date'],
+			'2.0.0.14.Hashrate': ['bigint'],
+			'2.0.0.14.Username': ['undefined'],
+			'2.0.0.15.Date': ['Date'],
+			'2.0.0.15.Hashrate': ['bigint'],
+			'2.0.0.15.Username': ['undefined'],
+			'2.0.0.16.Date': ['Date'],
+			'2.0.0.16.Hashrate': ['bigint'],
+			'2.0.0.16.Username': ['undefined'],
+			'2.0.0.17.Date': ['Date'],
+			'2.0.0.17.Hashrate': ['bigint'],
+			'2.0.0.17.Username': ['undefined'],
+			'2.0.0.18.Date': ['Date'],
+			'2.0.0.18.Hashrate': ['bigint'],
+			'2.0.0.18.Username': ['undefined'],
+			'2.0.0.19.Date': ['Date'],
+			'2.0.0.19.Hashrate': ['bigint'],
+			'2.0.0.19.Username': ['undefined'],
+			'2.0.0.20.Date': ['Date'],
+			'2.0.0.20.Hashrate': ['bigint'],
+			'2.0.0.20.Username': ['undefined'],
+			'2.0.0.21.Date': ['Date'],
+			'2.0.0.21.Hashrate': ['bigint'],
+			'2.0.0.21.Username': ['undefined'],
+			'2.0.0.22.Date': ['Date'],
+			'2.0.0.22.Hashrate': ['bigint'],
+			'2.0.0.22.Username': ['undefined'],
+			'2.0.0.23.Date': ['Date'],
+			'2.0.0.23.Hashrate': ['bigint'],
+			'2.0.0.23.Username': ['undefined'],
+			'2.0.0.24.Date': ['Date'],
+			'2.0.0.24.Hashrate': ['bigint'],
+			'2.0.0.24.Username': ['undefined'],
+			'2.0.0.25.Date': ['Date'],
+			'2.0.0.25.Hashrate': ['bigint'],
+			'2.0.0.25.Username': ['undefined'],
+			'2.0.0.26.Date': ['Date'],
+			'2.0.0.26.Hashrate': ['bigint'],
+			'2.0.0.26.Username': ['undefined'],
+			'2.0.0.27.Date': ['Date'],
+			'2.0.0.27.Hashrate': ['bigint'],
+			'2.0.0.27.Username': ['undefined'],
+			'2.0.0.28.Date': ['Date'],
+			'2.0.0.28.Hashrate': ['bigint'],
+			'2.0.0.28.Username': ['undefined'],
+			'2.0.0.29.Date': ['Date'],
+			'2.0.0.29.Hashrate': ['bigint'],
+			'2.0.0.29.Username': ['undefined'],
+			'2.0.0.30.Date': ['Date'],
+			'2.0.0.30.Hashrate': ['bigint'],
+			'2.0.0.30.Username': ['undefined'],
+			'2.0.0.31.Date': ['Date'],
+			'2.0.0.31.Hashrate': ['bigint'],
+			'2.0.0.31.Username': ['undefined'],
+			'2.0.0.32.Date': ['Date'],
+			'2.0.0.32.Hashrate': ['bigint'],
+			'2.0.0.32.Username': ['undefined'],
+			'2.0.0.33.Date': ['Date'],
+			'2.0.0.33.Hashrate': ['bigint'],
+			'2.0.0.33.Username': ['undefined'],
+			'2.0.0.34.Date': ['Date'],
+			'2.0.0.34.Hashrate': ['bigint'],
+			'2.0.0.34.Username': ['undefined'],
+			'2.0.0.35.Date': ['Date'],
+			'2.0.0.35.Hashrate': ['bigint'],
+			'2.0.0.35.Username': ['undefined'],
+			'2.0.0.36.Date': ['Date'],
+			'2.0.0.36.Hashrate': ['bigint'],
+			'2.0.0.36.Username': ['undefined'],
+			'2.0.0.37.Date': ['Date'],
+			'2.0.0.37.Hashrate': ['bigint'],
+			'2.0.0.37.Username': ['undefined'],
+			'2.0.0.38.Date': ['Date'],
+			'2.0.0.38.Hashrate': ['bigint'],
+			'2.0.0.38.Username': ['undefined'],
+			'2.0.0.39.Date': ['Date'],
+			'2.0.0.39.Hashrate': ['bigint'],
+			'2.0.0.39.Username': ['undefined'],
+			'2.0.0.40.Date': ['Date'],
+			'2.0.0.40.Hashrate': ['bigint'],
+			'2.0.0.40.Username': ['undefined'],
+			'2.0.0.41.Date': ['Date'],
+			'2.0.0.41.Hashrate': ['bigint'],
+			'2.0.0.41.Username': ['undefined'],
+			'2.0.0.42.Date': ['Date'],
+			'2.0.0.42.Hashrate': ['bigint'],
+			'2.0.0.42.Username': ['undefined'],
+			'2.0.0.43.Date': ['Date'],
+			'2.0.0.43.Hashrate': ['bigint'],
+			'2.0.0.43.Username': ['undefined'],
+			'2.0.0.44.Date': ['Date'],
+			'2.0.0.44.Hashrate': ['bigint'],
+			'2.0.0.44.Username': ['undefined'],
+			'2.0.0.45.Date': ['Date'],
+			'2.0.0.45.Hashrate': ['bigint'],
+			'2.0.0.45.Username': ['undefined'],
+			'2.0.0.46.Date': ['Date'],
+			'2.0.0.46.Hashrate': ['bigint'],
+			'2.0.0.46.Username': ['undefined'],
+			'2.0.0.47.Date': ['Date'],
+			'2.0.0.47.Hashrate': ['bigint'],
+			'2.0.0.47.Username': ['undefined'],
+			'2.0.0.48.Date': ['Date'],
+			'2.0.0.48.Hashrate': ['bigint'],
+			'2.0.0.48.Username': ['undefined'],
+			'2.0.0.49.Date': ['Date'],
+			'2.0.0.49.Hashrate': ['bigint'],
+			'2.0.0.49.Username': ['undefined'],
+			'2.0.0.50.Date': ['Date'],
+			'2.0.0.50.Hashrate': ['bigint'],
+			'2.0.0.50.Username': ['undefined'],
+			'2.0.0.51.Date': ['Date'],
+			'2.0.0.51.Hashrate': ['bigint'],
+			'2.0.0.51.Username': ['undefined'],
+			'2.0.0.52.Date': ['Date'],
+			'2.0.0.52.Hashrate': ['bigint'],
+			'2.0.0.52.Username': ['undefined'],
+			'2.0.0.53.Date': ['Date'],
+			'2.0.0.53.Hashrate': ['bigint'],
+			'2.0.0.53.Username': ['undefined'],
+			'2.0.0.54.Date': ['Date'],
+			'2.0.0.54.Hashrate': ['bigint'],
+			'2.0.0.54.Username': ['undefined'],
+			'2.0.0.55.Date': ['Date'],
+			'2.0.0.55.Hashrate': ['bigint'],
+			'2.0.0.55.Username': ['undefined'],
+			'2.0.0.56.Date': ['Date'],
+			'2.0.0.56.Hashrate': ['bigint'],
+			'2.0.0.56.Username': ['undefined'],
+			'2.0.0.57.Date': ['Date'],
+			'2.0.0.57.Hashrate': ['bigint'],
+			'2.0.0.57.Username': ['undefined'],
+			'2.0.0.58.Date': ['Date'],
+			'2.0.0.58.Hashrate': ['bigint'],
+			'2.0.0.58.Username': ['undefined'],
+			'2.0.0.59.Date': ['Date'],
+			'2.0.0.59.Hashrate': ['bigint'],
+			'2.0.0.59.Username': ['undefined'],
+			'2.0.0.60.Date': ['Date'],
+			'2.0.0.60.Hashrate': ['bigint'],
+			'2.0.0.60.Username': ['undefined'],
+			'2.0.0.61.Date': ['Date'],
+			'2.0.0.61.Hashrate': ['bigint'],
+			'2.0.0.61.Username': ['undefined'],
+			'2.0.0.62.Date': ['Date'],
+			'2.0.0.62.Hashrate': ['bigint'],
+			'2.0.0.62.Username': ['undefined'],
+			'2.0.0.63.Date': ['Date'],
+			'2.0.0.63.Hashrate': ['bigint'],
+			'2.0.0.63.Username': ['undefined'],
+			'2.0.0.64.Date': ['Date'],
+			'2.0.0.64.Hashrate': ['bigint'],
+			'2.0.0.64.Username': ['undefined'],
+			'2.0.0.65.Date': ['Date'],
+			'2.0.0.65.Hashrate': ['bigint'],
+			'2.0.0.65.Username': ['undefined'],
+			'2.0.0.66.Date': ['Date'],
+			'2.0.0.66.Hashrate': ['bigint'],
+			'2.0.0.66.Username': ['undefined'],
+			'2.0.0.67.Date': ['Date'],
+			'2.0.0.67.Hashrate': ['bigint'],
+			'2.0.0.67.Username': ['undefined'],
+			'2.0.0.68.Date': ['Date'],
+			'2.0.0.68.Hashrate': ['bigint'],
+			'2.0.0.68.Username': ['undefined'],
+			'2.0.0.69.Date': ['Date'],
+			'2.0.0.69.Hashrate': ['bigint'],
+			'2.0.0.69.Username': ['undefined'],
+			'2.0.0.70.Date': ['Date'],
+			'2.0.0.70.Hashrate': ['bigint'],
+			'2.0.0.70.Username': ['undefined'],
+			'2.0.0.71.Date': ['Date'],
+			'2.0.0.71.Hashrate': ['bigint'],
+			'2.0.0.71.Username': ['undefined'],
+			'2.0.0.72.Date': ['Date'],
+			'2.0.0.72.Hashrate': ['bigint'],
+			'2.0.0.72.Username': ['undefined'],
+			'2.0.0.73.Date': ['Date'],
+			'2.0.0.73.Hashrate': ['bigint'],
+			'2.0.0.73.Username': ['undefined'],
+			'2.0.0.74.Date': ['Date'],
+			'2.0.0.74.Hashrate': ['bigint'],
+			'2.0.0.74.Username': ['undefined'],
+			'2.0.0.75.Date': ['Date'],
+			'2.0.0.75.Hashrate': ['bigint'],
+			'2.0.0.75.Username': ['undefined'],
+			'2.0.0.76.Date': ['Date'],
+			'2.0.0.76.Hashrate': ['bigint'],
+			'2.0.0.76.Username': ['undefined'],
+			'2.0.0.77.Date': ['Date'],
+			'2.0.0.77.Hashrate': ['bigint'],
+			'2.0.0.77.Username': ['undefined'],
+			'2.0.0.78.Date': ['Date'],
+			'2.0.0.78.Hashrate': ['bigint'],
+			'2.0.0.78.Username': ['undefined'],
+			'2.0.0.79.Date': ['Date'],
+			'2.0.0.79.Hashrate': ['bigint'],
+			'2.0.0.79.Username': ['undefined'],
+			'2.0.0.80.Date': ['Date'],
+			'2.0.0.80.Hashrate': ['bigint'],
+			'2.0.0.80.Username': ['undefined'],
+			'2.0.0.81.Date': ['Date'],
+			'2.0.0.81.Hashrate': ['bigint'],
+			'2.0.0.81.Username': ['undefined'],
+			'2.0.0.82.Date': ['Date'],
+			'2.0.0.82.Hashrate': ['bigint'],
+			'2.0.0.82.Username': ['undefined'],
+			'2.0.0.83.Date': ['Date'],
+			'2.0.0.83.Hashrate': ['bigint'],
+			'2.0.0.83.Username': ['undefined'],
+			'2.0.0.84.Date': ['Date'],
+			'2.0.0.84.Hashrate': ['bigint'],
+			'2.0.0.84.Username': ['undefined'],
+			'2.0.0.85.Date': ['Date'],
+			'2.0.0.85.Hashrate': ['bigint'],
+			'2.0.0.85.Username': ['undefined'],
+			'2.0.0.86.Date': ['Date'],
+			'2.0.0.86.Hashrate': ['bigint'],
+			'2.0.0.86.Username': ['undefined'],
+			'2.0.0.87.Date': ['Date'],
+			'2.0.0.87.Hashrate': ['bigint'],
+			'2.0.0.87.Username': ['undefined'],
+			'2.0.0.88.Date': ['Date'],
+			'2.0.0.88.Hashrate': ['bigint'],
+			'2.0.0.88.Username': ['undefined'],
+			'2.0.0.89.Date': ['Date'],
+			'2.0.0.89.Hashrate': ['bigint'],
+			'2.0.0.89.Username': ['undefined'],
+			'2.0.0.90.Date': ['Date'],
+			'2.0.0.90.Hashrate': ['bigint'],
+			'2.0.0.90.Username': ['undefined'],
+			'2.0.0.91.Date': ['Date'],
+			'2.0.0.91.Hashrate': ['bigint'],
+			'2.0.0.91.Username': ['undefined'],
+			'2.0.0.92.Date': ['Date'],
+			'2.0.0.92.Hashrate': ['bigint'],
+			'2.0.0.92.Username': ['undefined'],
+			'2.0.0.93.Date': ['Date'],
+			'2.0.0.93.Hashrate': ['bigint'],
+			'2.0.0.93.Username': ['undefined'],
+			'2.0.0.94.Date': ['Date'],
+			'2.0.0.94.Hashrate': ['bigint'],
+			'2.0.0.94.Username': ['undefined'],
+			'2.0.0.95.Date': ['Date'],
+			'2.0.0.95.Hashrate': ['bigint'],
+			'2.0.0.95.Username': ['undefined'],
+			'2.0.0.96.Date': ['Date'],
+			'2.0.0.96.Hashrate': ['bigint'],
+			'2.0.0.96.Username': ['undefined'],
+			'2.0.0.97.Date': ['Date'],
+			'2.0.0.97.Hashrate': ['bigint'],
+			'2.0.0.97.Username': ['undefined'],
+			'2.0.0.98.Date': ['Date'],
+			'2.0.0.98.Hashrate': ['bigint'],
+			'2.0.0.98.Username': ['undefined'],
+			'2.0.0.99.Date': ['Date'],
+			'2.0.0.99.Hashrate': ['bigint'],
+			'2.0.0.99.Username': ['undefined'],
+			'2.0.0.100.Date': ['Date'],
+			'2.0.0.100.Hashrate': ['bigint'],
+			'2.0.0.100.Username': ['undefined'],
+			'2.0.0.101.Date': ['Date'],
+			'2.0.0.101.Hashrate': ['bigint'],
+			'2.0.0.101.Username': ['undefined'],
+			'2.0.0.102.Date': ['Date'],
+			'2.0.0.102.Hashrate': ['bigint'],
+			'2.0.0.102.Username': ['undefined'],
+			'2.0.0.103.Date': ['Date'],
+			'2.0.0.103.Hashrate': ['bigint'],
+			'2.0.0.103.Username': ['undefined'],
+			'2.0.0.104.Date': ['Date'],
+			'2.0.0.104.Hashrate': ['bigint'],
+			'2.0.0.104.Username': ['undefined'],
+			'2.0.0.105.Date': ['Date'],
+			'2.0.0.105.Hashrate': ['bigint'],
+			'2.0.0.105.Username': ['undefined'],
+			'2.0.0.106.Date': ['Date'],
+			'2.0.0.106.Hashrate': ['bigint'],
+			'2.0.0.106.Username': ['undefined'],
+			'2.0.0.107.Date': ['Date'],
+			'2.0.0.107.Hashrate': ['bigint'],
+			'2.0.0.107.Username': ['undefined'],
+			'2.0.0.108.Date': ['Date'],
+			'2.0.0.108.Hashrate': ['bigint'],
+			'2.0.0.108.Username': ['undefined'],
+			'2.0.0.109.Date': ['Date'],
+			'2.0.0.109.Hashrate': ['bigint'],
+			'2.0.0.109.Username': ['undefined'],
+			'2.0.0.110.Date': ['Date'],
+			'2.0.0.110.Hashrate': ['bigint'],
+			'2.0.0.110.Username': ['undefined'],
+			'2.0.0.111.Date': ['Date'],
+			'2.0.0.111.Hashrate': ['bigint'],
+			'2.0.0.111.Username': ['undefined'],
+			'2.0.0.112.Date': ['Date'],
+			'2.0.0.112.Hashrate': ['bigint'],
+			'2.0.0.112.Username': ['undefined'],
+			'2.0.0.113.Date': ['Date'],
+			'2.0.0.113.Hashrate': ['bigint'],
+			'2.0.0.113.Username': ['undefined'],
+			'2.0.0.114.Date': ['Date'],
+			'2.0.0.114.Hashrate': ['bigint'],
+			'2.0.0.114.Username': ['undefined'],
+			'2.0.0.115.Date': ['Date'],
+			'2.0.0.115.Hashrate': ['bigint'],
+			'2.0.0.115.Username': ['undefined'],
+			'2.0.0.116.Date': ['Date'],
+			'2.0.0.116.Hashrate': ['bigint'],
+			'2.0.0.116.Username': ['undefined'],
+			'2.0.0.117.Date': ['Date'],
+			'2.0.0.117.Hashrate': ['bigint'],
+			'2.0.0.117.Username': ['undefined'],
+			'2.0.0.118.Date': ['Date'],
+			'2.0.0.118.Hashrate': ['bigint'],
+			'2.0.0.118.Username': ['undefined'],
+			'2.0.0.119.Date': ['Date'],
+			'2.0.0.119.Hashrate': ['bigint'],
+			'2.0.0.119.Username': ['undefined'],
+			'2.0.0.120.Date': ['Date'],
+			'2.0.0.120.Hashrate': ['bigint'],
+			'2.0.0.120.Username': ['undefined'],
+			'2.0.0.121.Date': ['Date'],
+			'2.0.0.121.Hashrate': ['bigint'],
+			'2.0.0.121.Username': ['undefined'],
+			'2.0.0.122.Date': ['Date'],
+			'2.0.0.122.Hashrate': ['bigint'],
+			'2.0.0.122.Username': ['undefined'],
+			'2.0.0.123.Date': ['Date'],
+			'2.0.0.123.Hashrate': ['bigint'],
+			'2.0.0.123.Username': ['undefined'],
+			'2.0.0.124.Date': ['Date'],
+			'2.0.0.124.Hashrate': ['bigint'],
+			'2.0.0.124.Username': ['undefined'],
+			'2.0.0.125.Date': ['Date'],
+			'2.0.0.125.Hashrate': ['bigint'],
+			'2.0.0.125.Username': ['undefined'],
+			'2.0.0.126.Date': ['Date'],
+			'2.0.0.126.Hashrate': ['bigint'],
+			'2.0.0.126.Username': ['undefined'],
+			'2.0.0.127.Date': ['Date'],
+			'2.0.0.127.Hashrate': ['bigint'],
+			'2.0.0.127.Username': ['undefined'],
+			'2.0.0.128.Date': ['Date'],
+			'2.0.0.128.Hashrate': ['bigint'],
+			'2.0.0.128.Username': ['undefined'],
+			'2.0.0.129.Date': ['Date'],
+			'2.0.0.129.Hashrate': ['bigint'],
+			'2.0.0.129.Username': ['undefined'],
+			'2.0.0.130.Date': ['Date'],
+			'2.0.0.130.Hashrate': ['bigint'],
+			'2.0.0.130.Username': ['undefined'],
+			'2.0.0.131.Date': ['Date'],
+			'2.0.0.131.Hashrate': ['bigint'],
+			'2.0.0.131.Username': ['undefined'],
+			'2.0.0.132.Date': ['Date'],
+			'2.0.0.132.Hashrate': ['bigint'],
+			'2.0.0.132.Username': ['undefined'],
+			'2.0.0.133.Date': ['Date'],
+			'2.0.0.133.Hashrate': ['bigint'],
+			'2.0.0.133.Username': ['undefined'],
+			'2.0.0.134.Date': ['Date'],
+			'2.0.0.134.Hashrate': ['bigint'],
+			'2.0.0.134.Username': ['undefined'],
+			'2.0.0.135.Date': ['Date'],
+			'2.0.0.135.Hashrate': ['bigint'],
+			'2.0.0.135.Username': ['undefined'],
+			'2.0.0.136.Date': ['Date'],
+			'2.0.0.136.Hashrate': ['bigint'],
+			'2.0.0.136.Username': ['undefined'],
+			'2.0.0.137.Date': ['Date'],
+			'2.0.0.137.Hashrate': ['bigint'],
+			'2.0.0.137.Username': ['undefined'],
+			'2.0.0.138.Date': ['Date'],
+			'2.0.0.138.Hashrate': ['bigint'],
+			'2.0.0.138.Username': ['undefined'],
+			'2.0.0.139.Date': ['Date'],
+			'2.0.0.139.Hashrate': ['bigint'],
+			'2.0.0.139.Username': ['undefined'],
+			'2.0.0.140.Date': ['Date'],
+			'2.0.0.140.Hashrate': ['bigint'],
+			'2.0.0.140.Username': ['undefined'],
+			'2.0.0.141.Date': ['Date'],
+			'2.0.0.141.Hashrate': ['bigint'],
+			'2.0.0.141.Username': ['undefined'],
+			'2.0.0.142.Date': ['Date'],
+			'2.0.0.142.Hashrate': ['bigint'],
+			'2.0.0.142.Username': ['undefined'],
+			'2.0.0.143.Date': ['Date'],
+			'2.0.0.143.Hashrate': ['bigint'],
+			'2.0.0.143.Username': ['undefined'],
+			'2.0.0.144.Date': ['Date'],
+			'2.0.0.144.Hashrate': ['bigint'],
+			'2.0.0.144.Username': ['undefined'],
+			'2.0.0.145.Date': ['Date'],
+			'2.0.0.145.Hashrate': ['bigint'],
+			'2.0.0.145.Username': ['undefined'],
+			'2.0.0.146.Date': ['Date'],
+			'2.0.0.146.Hashrate': ['bigint'],
+			'2.0.0.146.Username': ['undefined'],
+			'2.0.0.147.Date': ['Date'],
+			'2.0.0.147.Hashrate': ['bigint'],
+			'2.0.0.147.Username': ['undefined'],
+			'2.0.0.148.Date': ['Date'],
+			'2.0.0.148.Hashrate': ['bigint'],
+			'2.0.0.148.Username': ['undefined'],
+			'2.0.0.149.Date': ['Date'],
+			'2.0.0.149.Hashrate': ['bigint'],
+			'2.0.0.149.Username': ['undefined'],
+			'2.0.0.150.Date': ['Date'],
+			'2.0.0.150.Hashrate': ['bigint'],
+			'2.0.0.150.Username': ['undefined'],
+			'2.0.0.151.Date': ['Date'],
+			'2.0.0.151.Hashrate': ['bigint'],
+			'2.0.0.151.Username': ['undefined'],
+			'2.0.0.152.Date': ['Date'],
+			'2.0.0.152.Hashrate': ['bigint'],
+			'2.0.0.152.Username': ['undefined']
+		},
+		'referentialEqualities': {
+			'2.0.0.2.Hashrate': ['2.0.0.12.Hashrate'],
+			'2.0.0.3.Hashrate': ['2.0.0.115.Hashrate'],
+			'2.0.0.4.Hashrate': ['2.0.0.58.Hashrate'],
+			'2.0.0.7.Hashrate': ['2.0.0.11.Hashrate'],
+			'2.0.0.13.Hashrate': ['2.0.0.125.Hashrate'],
+			'2.0.0.14.Hashrate': ['2.0.0.26.Hashrate', '2.0.0.122.Hashrate'],
+			'2.0.0.18.Hashrate': ['2.0.0.22.Hashrate'],
+			'2.0.0.20.Hashrate': ['2.0.0.114.Hashrate'],
+			'2.0.0.23.Hashrate': ['2.0.0.120.Hashrate', '2.0.0.134.Hashrate'],
+			'2.0.0.39.Hashrate': ['2.0.0.48.Hashrate'],
+			'2.0.0.111.Hashrate': ['2.0.0.132.Hashrate']
+		},
+		'v': 1
+	}
+}]

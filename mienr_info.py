@@ -1,5 +1,8 @@
 import socket
 import json
+from logging import exception
+
+from utils.utils_k import ping_ip
 
 
 def cgminer_summary(ip, timeout=1.0):
@@ -37,13 +40,31 @@ def cgminer_summary(ip, timeout=1.0):
 # ------------------ 测试 ------------------
 
 def get_miner_hash_rate_by_ip(ip):
-    miner_info=cgminer_summary(ip)
-    print(miner_info)
-    if miner_info is None:
-        return None
-    else:
-        return miner_info["SUMMARY"][0]["MHS av"]
-
+    try:
+        if ping_ip(ip):
+            miner_info=cgminer_summary(ip)
+            if miner_info is None:
+                return None
+            else:
+                return ip, {
+                    "code": 0,
+                    "status": "normal",
+                    "hashrate": miner_info["SUMMARY"][0]["MHS 30s"]
+                }
+        else:
+            return ip, {
+                "code": -1,
+                "status": "offline",
+                "hashrate": 0
+            }
+    except Exception as e:
+        print(e)
+        return ip, {
+            "code": -1,
+            "status": "error",
+            "hashrate": 0
+        }
 
 if __name__ == "__main__":
-   print("")
+    h= get_miner_hash_rate_by_ip('10.1.1.1')
+    print(h)

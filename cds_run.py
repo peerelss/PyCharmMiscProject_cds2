@@ -59,7 +59,11 @@ def run_task_tele():
             print(ip)
             ip_offline.append(ip)
     if len(ip_offline) > 0:
-        asyncio.run(send_tele("离线ip".join(ip_offline)))
+        message_str = "离线ip".join(ip_offline)
+        if len(message_str) < 4000:
+            asyncio.run(send_tele(message_str))
+        else:
+            asyncio.run(send_tele("离线ip过多"))
 
 
 if __name__ == "__main__":

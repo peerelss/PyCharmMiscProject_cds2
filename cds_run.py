@@ -65,19 +65,7 @@ def get_higher_70_power_price():
     else:
         print("未能成功获取电价数据。")
 
-    if len(ip_over_heat) > 0:
-        message_str = "高温ip".join(ip_offline)
 
-        docs = [
-            {
-                "ip": ip,
-                "status": "over_heat",
-                "temp": ip_temp,
-                "created_at": datetime.now()
-            }
-            for ip, ip_temp in ip_over_heat
-        ]
-        collection_over_heat.insert_many(docs)
 
 
 def run_task_tele():
@@ -114,11 +102,21 @@ def run_task_tele():
             asyncio.run(send_tele(message_str))
         else:
             asyncio.run(send_tele("离线ip过多"))
-    ac,ah=  ob_monitor.et_active_hour_power_price()
-    if ac/ONLINE_MINER <0.5:
-        asyncio.run(send_tele("离线ip过多"))
-    if ah/HASH_RATE<0.5 :
-        asyncio.run(send_tele("算力下降太多"))
+
+    if len(ip_over_heat) > 0:
+        message_str = "高温ip".join(ip_offline)
+
+        docs = [
+            {
+                "ip": ip,
+                "status": "over_heat",
+                "temp": ip_temp,
+                "created_at": datetime.now()
+            }
+            for ip, ip_temp in ip_over_heat
+        ]
+        collection_over_heat.insert_many(docs)
+
 
 if __name__ == "__main__":
     asyncio.run(send_tele("启动BOT"))

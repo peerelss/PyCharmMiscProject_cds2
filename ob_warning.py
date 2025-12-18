@@ -104,8 +104,10 @@ class MonitorUI(QWidget):
         self.update_time_label.setAlignment(Qt.AlignCenter)
         self.update_time_label.setStyleSheet("""
             QLabel {
-                color:#aaa;
-                font-size:12px;
+                color: #000000;
+                font-size: 16px;
+                font-weight: bold;
+                padding: 6px;
             }
         """)
         layout.addWidget(self.update_time_label, 5, 0, 1, 2)
@@ -186,8 +188,27 @@ class MonitorUI(QWidget):
         self.update_time_label.setText(f"最后更新时间：{now}")
         ac, ah = get_active_miner_and_hashrate()
         self.miner_count_label.setText(f"矿机在线数：{ac}")
-        self.hashrate_label.setText(f"算力：{ah} TH/s")
+        self.hashrate_label.setText(f"算力：{ah:.3f} PH/s")
+        self.update_miner_status(ac)
 
+    def update_miner_status(self, active_miners: int):
+        if active_miners >= 1006:
+            color = "#2ecc71"  # 绿色
+            text = "正常"
+        elif active_miners > 900:
+            color = "#f1c40f"  # 黄色
+            text = "警告"
+        else:
+            color = "#e74c3c"  # 红色
+            text = "异常"
+
+        self.miner_status.setStyleSheet(f"""
+            QFrame {{
+                border-radius:6px;
+                background:{color};
+            }}
+        """)
+        self.miner_status.label.setText(text)
 
 # ---------------- 入口 ----------------
 if __name__ == "__main__":

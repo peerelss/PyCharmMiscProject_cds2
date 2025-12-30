@@ -139,5 +139,5 @@ def get_miner_temp_by_ip(ip):
 
 
 if __name__ == "__main__":
-    # get_miner_hash_rate_by_ip('10.3.1.75')
-    print(get_miner_temp_by_ip('10.3.1.75'))
+    print(get_miner_hash_rate_by_ip('10.1.4.28'))
+    #print(get_miner_temp_by_ip('10.3.1.75'))

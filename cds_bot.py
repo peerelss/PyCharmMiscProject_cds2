@@ -90,7 +90,6 @@ def main() -> None:
 if __name__ == "__main__":
     ips = utils.utils_k.txt_2_list('ips.txt')
     ip_offline = []
-    ip_over_heat = []
     time_now = datetime.now()
     for ip in ips:
         if not ping_ip(ip):

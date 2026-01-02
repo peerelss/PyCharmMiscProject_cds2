@@ -68,7 +68,7 @@ def get_ercot_hb_west_prices(url: str) -> dict:
 
 
 # 您的目标 URL
-url = "https://www.ercot.com/content/cdr/html/20251205_dam_spp.html"
+url = "https://www.ercot.com/content/cdr/html/20260102_dam_spp.html"
 
 # 执行抓取
 hb_west_prices = get_ercot_hb_west_prices(url)

@@ -84,4 +84,3 @@ def date_to_string_tomorrow():
 if __name__ == "__main__":
     info = cgminer_api("10.2.1.5", "devs")
     print(info)
-    date_to_string()

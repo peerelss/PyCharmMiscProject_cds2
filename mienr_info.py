@@ -1,7 +1,11 @@
 import socket
 import json
 import re
-
+import utils.utils_k
+from utils.utils_k import ping_ip
+import logging
+import os
+from datetime import datetime
 
 def split_json_objects(text):
     objs = []
@@ -106,7 +110,7 @@ def cgminer_summary(ip, timeout=1.0):
 def get_miner_hash_rate_by_ip(ip):
     miner_info = cgminer_summary(ip)
     if miner_info is None:
-        return None
+        return 0
     else:
         return miner_info["SUMMARY"][0]["MHS av"]
 
@@ -133,11 +137,22 @@ def get_miner_temp_by_ip(ip):
         try:
             temp_str = miner_info["STATS"][0]['MM ID0']
             info = parse_temp_info(temp_str)
-            return (info)
+            return info
         except Exception as e:
-            return None
+            return 0
 
+def k_test():
+    ips = utils.utils_k.txt_2_list('ips.txt')
+    ip_offline = []
+    time_now = datetime.now()
+    for ip in ips:
+        if not ping_ip(ip):
+            print(f"{ip},离线时间为:{time_now}")
+            ip_offline.append(ip)
+        else:
+            hash_ip = (get_miner_hash_rate_by_ip(ip))
+            if hash_ip < 1:
+                print(f"{ip},0算力时间:{time_now}")
 
 if __name__ == "__main__":
-    print(get_miner_hash_rate_by_ip('10.1.4.28'))
-    #print(get_miner_temp_by_ip('10.3.1.75'))
+   print(get_miner_hash_rate_by_ip('10.3.1.75'))

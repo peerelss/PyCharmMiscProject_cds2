@@ -10,7 +10,6 @@ from telegram.ext import (
     filters
 )
 import utils.utils_k
-from utils.get_hour_power_price import get_ercot_hb_west_prices
 from utils.utils_k import ping_ip
 
 # 1. 配置日志记录 (可选，但推荐)
@@ -92,6 +91,6 @@ if __name__ == "__main__":
     ip_offline = []
     time_now = datetime.now()
     for ip in ips:
-        if not ping_ip(ip):
+        if not  ping_ip(ip):
             print(f"{ip},离线时间为:{time_now}")
             ip_offline.append(ip)

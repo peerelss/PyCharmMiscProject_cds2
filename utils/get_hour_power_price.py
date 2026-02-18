@@ -2,6 +2,8 @@ import requests
 import pandas as pd
 from io import StringIO
 
+THRESHOLD_1 = 70  # 图表 1 阈值较低
+
 
 def get_ercot_hb_west_prices(url: str) -> dict:
     """
@@ -70,14 +72,21 @@ def get_ercot_hb_west_prices(url: str) -> dict:
 # 您的目标 URL
 url = "https://www.ercot.com/content/cdr/html/20260102_dam_spp.html"
 
-# 执行抓取
-hb_west_prices = get_ercot_hb_west_prices(url)
+
+# 从电价里获取开始休眠和开始唤醒的时间
+# 如果当前 1/ d_1 <70 d >70  2/ d>80 or d_1 >70 d开始休眠
+# 如果当前 1/ d_1 >70 并且 d<70 开始唤醒
+
+
+
+
+
 if __name__ == "__main__":
-# 打印结果
+    # 打印结果
     if hb_west_prices:
         print(f"--- ERCOT HB_WEST 20251205 每小时电价 ---")
         for hour, price in hb_west_prices.items():
-            print(f"小时 {hour:02d}: ${price:.2f}")
+            print(f"{hour:02d}小时 : ${price:.2f}")
+
     else:
         print("未能成功获取电价数据。")
-

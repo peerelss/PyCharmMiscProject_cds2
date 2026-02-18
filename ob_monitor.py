@@ -1,167 +1,96 @@
-from threading import active_count
-
 import requests
 import json
-import time
 
 
-def fetch_luxor_pool_data():
-    """
-    Sends a batched tRPC request to the Luxor mining pool API to fetch
-    watcher statistics like hashrate, efficiency, and workers.
-    """
-    url = 'https://app.luxor.tech/api/trpc/pool.watcher.getHashrate,pool.watcher.getHashrate,pool.watcher.getActiveMiners,pool.watcher.getEfficiency,pool.watcher.getUptime,pool.watcher.getPendingBalance,pool.watcher.getRevenue,pool.watcher.getHashrateAndEfficiencyHistory,pool.watcher.getWorkers,pool.watcher.incrementWatcherViewCount?batch=1'
-
-    # The token is part of the URL and the headers, and the progressiveUserId is in the payload.
-    # Replace with a valid token if the original one expires.
-    watcher_token = 'watcher-cfabb00ab508bff0db810c5f1c92a003'
-    progressive_user_id = 1174665
-    current_timestamp_s = int(time.time())
+def fetch_luxor_kpi():
+    # 1. 基础配置
+    url = "https://app.luxor.tech/api/trpc/watcherV2.getKpi,watcherV2.getKpi,watcherV2.getKpi"
+    params = {"batch": "1"}
 
     headers = {
-        'accept': '*/*',
-        'accept-language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
-        'content-type': 'application/json',
-        'origin': 'https://app.luxor.tech',
-        'priority': 'u=1, i',
-        'referer': f'https://app.luxor.tech/en/views/watcher?token={watcher_token}',
-        'sec-ch-ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'trpc-accept': 'application/jsonl',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36',
-        'x-lux-watcher-token': watcher_token,
-        'x-trpc-source': 'nextjs-react',
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+        "Accept": "*/*",
+        "Accept-Language": "en-US,en;q=0.9",
+        "content-type": "application/json",
+        "trpc-accept": "application/jsonl",  # 关键：告知服务器我们接受行分隔的 JSON
+        "x-lux-watcher-token": "watcher-cfabb00ab508bff0db810c5f1c92a003",
+        "x-trpc-source": "nextjs-react",
+        "Referer": "https://app.luxor.tech/zh/views/v2?token=watcher-cfabb00ab508bff0db810c5f1c92a003",
+        "Origin": "https://app.luxor.tech"
     }
 
-    cookies = {
-        'slug': 'luxor',
-        'i18next': 'en',
-    }
-
-    # The date range for 'getHashrateAndEfficiencyHistory' needs to be calculated
-    # based on the current time to ensure the request is valid.
-    date_range_end = current_timestamp_s
-    date_range_start = current_timestamp_s - (15 * 3600)  # 15 hours ago
-
-    data_payload = {
-        "0": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1, "lastSeconds": 300}},
-        "1": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1, "lastSeconds": 86400}},
-        "2": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1, "lastSeconds": 300}},
-        # Target function
-        "3": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1, "lastSeconds": 300}},
-        "4": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1, "lastSeconds": 86400}},
-        "5": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1}},
-        "6": {"json": {"progressiveUserIds": [progressive_user_id], "currencyProfile": 1, "lastSeconds": 86400}},
-        "7": {
+    # 2. 构造请求 Payload
+    payload = {
+        "0": {
             "json": {
-                "progressiveUserIds": [progressive_user_id],
                 "currencyProfile": 1,
+                "workspaceId": "",
+                "kpiType": 5,
+                "subaccounts": {"ids": [1174665], "names": []}
+            }
+        },
+        "1": {
+            "json": {
+                "kpiType": 2,
+                "currencyProfile": 1,
+                "workspaceId": "",
+                "subaccounts": {"ids": [1174665], "names": []},
                 "dateRange": {
-                    "$typeName": "google.protobuf.Timestamp",
-                    "startDate": {"$typeName": "google.protobuf.Timestamp", "seconds": str(date_range_start),
-                                  "nanos": 0},
-                    "endDate": {"$typeName": "google.protobuf.Timestamp", "seconds": str(date_range_end), "nanos": 0}
+                    "startDate": {"$typeName": "google.protobuf.Timestamp", "seconds": "1771394400", "nanos": 0},
+                    "endDate": {"$typeName": "google.protobuf.Timestamp", "seconds": "1771441286", "nanos": 966000000}
                 },
                 "granularityMinutes": 5
             },
-            "meta": {"values": {"dateRange.startDate.seconds": ["bigint"], "dateRange.endDate.seconds": ["bigint"]},
-                     "v": 1}
-        },
-        "8": {
-            "json": {
-                "currencyProfile": 1,
-                "progressiveUserIds": [progressive_user_id],
-                "pagination": {"pageNumber": 1, "pageSize": 10},
-                "lastSeconds": 900,
-                "filter": {"name": "", "status": 1, "sorting": {"id": "workername", "desc": False}}
+            "meta": {
+                "values": {
+                    "dateRange.startDate.seconds": ["bigint"],
+                    "dateRange.endDate.seconds": ["bigint"]
+                },
+                "v": 1
             }
         },
-        "9": {"json": {}}
+        "2": {
+            "json": {
+                "currencyProfile": 1,
+                "workspaceId": "",
+                "kpiType": 8,
+                "subaccounts": {"ids": [1174665], "names": []},
+                "pagination": {"pageIndex": 1, "pageSize": 10},
+                "lastSeconds": 900,
+                "sorting": [],
+                "workers": {"status": 0, "name": ""}
+            }
+        }
     }
 
     try:
-        response = requests.post(
-            url,
-            headers=headers,
-            cookies=cookies,
-            data=json.dumps(data_payload)
-        )
+        # 3. 发送 POST 请求 (使用 stream=True 以便逐行处理)
+        response = requests.post(url, params=params, headers=headers, json=payload, stream=True)
         response.raise_for_status()
+        results = []
+        for line in response.iter_lines():
+            if line:
+                results.append(json.loads(line))
+        h5 = 0
+        # 现在 results 是一个列表，包含了 0, 1, 2 三个请求的结果
+        for i, result in enumerate(results):
+            print(f"--- Result for part {i} ---")
+        #    print(json.dumps(result, indent=2, ensure_ascii=False))
+            if i==6:
+                target_kpi = result["json"][2][0][0]["kpi"]["value"]["hashrateFiveMinutes"]
 
-        data_lines = response.text.strip().split('\n')
-        parsed_results = [json.loads(line) for line in data_lines]
+                last_period =  (target_kpi["lastPeriod"])
+                h5=int(last_period)/1000/1000/1000/1000/1000
+                print(f"5分钟算力 (lastPeriod): {last_period}")
+                print(f"5分钟算力 (h5): {h5}")
+        print("--- 开始解析返回数据 ---")
 
-        print("✅ Request successful. Data summary:")
+        return h5
 
-        # --- Active Miners Extraction ---
-        # The result for 'pool.watcher.getActiveMiners' is at index 2
-        active_miners_result = parsed_results[2]
+    except Exception as e:
+        print(f"程序运行出错: {e}")
+        return 0
 
-        # Structure path: [2] -> 'result' -> 'data' -> 'json' -> [2] -> [0] -> [0] -> 'activeMiners'
-        try:
-            active_miners_count = (
-                active_miners_result
-                .get('result', {})
-                .get('data', {})
-                .get('json', [])[2][0][0]
-                .get('activeMiners')
-            )
-            print(f"\n--- 💰 ACTIVE MINERS ---")
-            print(f"Active Miners: {active_miners_count}")
-        except (IndexError, TypeError, KeyError) as e:
-            print(f"\n❌ Error extracting Active Miners data: {e}")
-            active_miners_count = "N/A"
-        # -------------------------------
-
-        # 0: pool.watcher.getHashrate (300s)
-        print(f"\n--- 300s Hashrate ---")
-        hashrate_300s = parsed_results[0].get('result', {}).get('data', {}).get('json', {})
-        print(f"Hashrate: {hashrate_300s.get('hashrate')} {hashrate_300s.get('unit')}")
-
-        # 3: pool.watcher.getEfficiency (300s)
-        print(f"\n--- 300s Efficiency ---")
-        efficiency_300s = parsed_results[3].get('result', {}).get('data', {}).get('json', {})
-        print(f"Efficiency: {efficiency_300s.get('efficiency', 'N/A')}")
-
-        # 8: pool.watcher.getWorkers (900s)
-        print(f"\n--- Workers Summary (Page 1) ---")
-        workers_data = parsed_results[8].get('result', {}).get('data', {}).get('json', {})
-        worker_count = len(workers_data.get('workers', []))
-        total_workers = workers_data.get('totalCount')
-        print(f"Found {worker_count} of {total_workers} total workers in the list.")
-
-        return parsed_results
-
-    except requests.exceptions.RequestException as e:
-        print(f"❌ An error occurred: {e}")
-        print(f"Response content: {getattr(e.response, 'text', 'N/A')}")
-        return None
-
-def get_active_miner_and_hashrate():
-    data = fetch_luxor_pool_data()
-    active_count = 0
-    active_hashrate = 0
-    for d in data:
-        dd = list(d['json'])
-        for d3 in dd[2]:
-            for d4 in d3:
-                if type(d4) is dict:
-                    if 'activeMiners' in d4:
-                        d4c = int(d4['activeMiners'])
-                        if d4c > active_count:
-                            active_count = d4c
-                    if 'hashrateLastPeriod' in d4:
-                        d4h = float(d4['hashrateLastPeriod'])/1000/1000/1000/1000/1000
-                        if d4h > active_hashrate:
-                            active_hashrate = d4h
-    return active_count, active_hashrate
 
 if __name__ == "__main__":
-    # 1. 调用函数获取结果列表
-    ac,ah=get_active_miner_and_hashrate()
-    print(ac)
-    print(ah)
+    fetch_luxor_kpi()

@@ -1,104 +1,39 @@
 import requests
-import json
+from bs4 import BeautifulSoup
+from collections import defaultdict
 
-# 设置会话
-session = requests.Session()
+def fetch_rt_grouped(date_str):
+    url = f"https://www.ercot.com/content/cdr/html/{date_str}_real_time_spp.html"
+    r = requests.get(url, timeout=10)
+    r.raise_for_status()
 
-# 设置请求头
-headers = {
-    "accept": "*/*",
-    "accept-language": "en-US,en;q=0.9",
-    "content-type": "application/json",
-    "origin": "https://app.luxor.tech",
-    "priority": "u=1, i",
-    "referer": "https://app.luxor.tech/zh/views/v2?token=watcher-cfabb00ab508bff0db810c5f1c92a003",
-    "sec-ch-ua": "\"Not(A:Brand);v=\"8\", \"Chromium\";v=\"144\", \"Microsoft Edge\";v=\"144\"",
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": "\"Windows\"",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "trpc-accept": "application/jsonl",
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0",
-    "x-lux-watcher-token": "watcher-cfabb00ab508bff0db810c5f1c92a003",
-    "x-trpc-source": "nextjs-react"
-}
+    soup = BeautifulSoup(r.text, "html.parser")
+    headers = [h.get_text(strip=True) for h in soup.find("tr").find_all(["th","td"])]
 
-# 设置 cookies
-session.cookies.set('slug', 'luxor', domain='.luxor.tech', path='/')
-session.cookies.set('i18next', 'zh', domain='app.luxor.tech', path='/')
+    idx_hb = headers.index("HB_WEST")
 
-# 请求体数据
-data = {
-    "0": {
-        "json": {
-            "currencyProfile": 1,
-            "workspaceId": "",
-            "kpiType": 5,
-            "subaccounts": {
-                "ids": [1174665],
-                "names": []
-            }
-        }
-    },
-    "1": {
-        "json": {
-            "kpiType": 2,
-            "currencyProfile": 1,
-            "workspaceId": "",
-            "subaccounts": {
-                "ids": [1174665],
-                "names": []
-            },
-            "dateRange": {
-                "startDate": {
-                    "$typeName": "google.protobuf.Timestamp",
-                    "seconds": "1771394400",
-                    "nanos": 0
-                },
-                "endDate": {
-                    "$typeName": "google.protobuf.Timestamp",
-                    "seconds": "1771441121",
-                    "nanos": 548000000
-                }
-            },
-            "granularityMinutes": 5
-        },
-        "meta": {
-            "values": {
-                "dateRange.startDate.seconds": ["bigint"],
-                "dateRange.endDate.seconds": ["bigint"]
-            },
-            "v": 1
-        }
-    },
-    "2": {
-        "json": {
-            "currencyProfile": 1,
-            "workspaceId": "",
-            "kpiType": 8,
-            "subaccounts": {
-                "ids": [1174665],
-                "names": []
-            },
-            "pagination": {
-                "pageIndex": 1,
-                "pageSize": 10
-            },
-            "lastSeconds": 900,
-            "sorting": [],
-            "workers": {
-                "status": 0,
-                "name": ""
-            }
-        }
-    }
-}
+    prices = []
 
-# 发送 POST 请求
-url = "https://app.luxor.tech/api/trpc/watcherV2.getKpi,watcherV2.getKpi,watcherV2.getKpi?batch=1"
-response = session.post(url, headers=headers, json=data)
+    # 取出全部 96 个 15min 数据
+    for row in soup.find_all("tr")[1:]:
+        cols = [c.get_text(strip=True) for c in row.find_all(["td","th"])]
+        if len(cols) > idx_hb:
+            try:
+                prices.append(float(cols[idx_hb]))
+            except:
+                pass
 
-# 打印响应的状态码和内容
-print(f"响应状态码: {response.status_code}")
-print(f"响应内容: {response.json()}")
+    if len(prices) != 96:
+        raise ValueError(f"{date_str}: Expected 96 intervals, got {len(prices)}")
+
+    # 和 fetch_rt_prices 一致的结构
+    grouped = defaultdict(list)
+
+    for h in range(24):
+        grouped[h] = prices[h*4:(h+1)*4]  # Hour Ending 1–24
+
+    return grouped
+
+
+if __name__ == "__main__":
+    print(fetch_rt_grouped("20260219"))

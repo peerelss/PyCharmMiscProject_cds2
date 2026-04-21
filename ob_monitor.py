@@ -1,5 +1,6 @@
 import requests
 import json
+import time
 
 
 def fetch_luxor_kpi():
@@ -75,12 +76,12 @@ def fetch_luxor_kpi():
         # 现在 results 是一个列表，包含了 0, 1, 2 三个请求的结果
         for i, result in enumerate(results):
             print(f"--- Result for part {i} ---")
-        #    print(json.dumps(result, indent=2, ensure_ascii=False))
-            if i==6:
+            #    print(json.dumps(result, indent=2, ensure_ascii=False))
+            if i == 6:
                 target_kpi = result["json"][2][0][0]["kpi"]["value"]["hashrateFiveMinutes"]
 
-                last_period =  (target_kpi["lastPeriod"])
-                h5=int(last_period)/1000/1000/1000/1000/1000
+                last_period = (target_kpi["lastPeriod"])
+                h5 = int(last_period) / 1000 / 1000 / 1000 / 1000 / 1000
                 print(f"5分钟算力 (lastPeriod): {last_period}")
                 print(f"5分钟算力 (h5): {h5}")
         print("--- 开始解析返回数据 ---")
@@ -93,4 +94,12 @@ def fetch_luxor_kpi():
 
 
 if __name__ == "__main__":
-    fetch_luxor_kpi()
+    for i in range(1, 6):
+        try:
+            h_online = fetch_luxor_kpi()
+            if h_online is not None and h_online > 0:
+                print(f"5分钟算力 (h_online): {h_online}")
+        except Exception as e:
+            print(f"获取在线算力时出错: {e}")
+        time.sleep(30)
+    print(f"5分钟算力 (h5): {h_online}")

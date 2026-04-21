@@ -7,10 +7,16 @@ import utils.utils_k
 import pymongo
 import time
 from datetime import datetime
+
 # MongoDB 配置
 client = pymongo.MongoClient("mongodb://localhost:27017/")  # 连接到本地 MongoDB
 db = client["mining_data"]  # 数据库名称
 collection = db["hash_rates"]  # 集合名称
+
+client_url = "mongodb+srv://kevin_miner_test:Peerless123@cluster0.458zxp3.mongodb.net/?retryWrites=true&w=majority"
+client_online = pymongo.MongoClient(client_url)  # 连接到 MongoDB Atlas
+db_online = client_online["mining_data"]
+col_online = db_online["hash_rates"]
 
 
 def cgminer_summary(ip, timeout=1.0):
@@ -65,7 +71,6 @@ def get_hash_rate_online():
     return 0
 
 
-
 def get_total_hash_locate():
     try:
         ips = utils.utils_k.txt_2_list('../ips.txt')  # 示例 IP 列表
@@ -104,6 +109,8 @@ def store_hash_rate():
         # 获取矿机算力总和
         hash_rate_locate = get_total_hash_locate()
         hash_rate_online = get_hash_rate_online()
+        if hash_rate_online == 0:
+            hash_rate_online = hash_rate_locate
 
         # 存储到 MongoDB
         record = {
@@ -115,6 +122,11 @@ def store_hash_rate():
 
         # 插入数据到 MongoDB
         collection.insert_one(record)
+        try:
+            col_online.insert_one(record)
+            print(f"存储数据成功_网络数据库：{current_time} - {hash_rate_locate} TH/s")
+        except Exception as e:
+            print(f"存储数据时出错: {e}")
         print(f"存储数据成功：{current_time} - {hash_rate_locate} TH/s")
 
     except Exception as e:
@@ -124,6 +136,7 @@ def store_hash_rate():
 # 设置每 15 分钟执行一次存储任务
 
 if __name__ == "__main__":
+    store_hash_rate()
     schedule.every(15).minutes.do(store_hash_rate)
 
     # 永久运行以持续执行任务
